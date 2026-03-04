@@ -38,3 +38,15 @@ ggplot(data = mtcars,
        y = "每加仑里程 (mpg)", 
        color = "气缸数", 
        size = "马力")
+# --- 进阶分析：线性回归模型 ---
+# 我们想量化：每增加 1000 磅重量，每加仑里程(mpg)平均会减少多少？
+
+# 建立线性模型：mpg = 截距 + 斜率 * wt
+car_model <- lm(mpg ~ wt, data = mtcars)
+
+# 查看模型的详细统计结果
+summary(car_model)
+
+# 在图表上添加回归方程的信息（这会输出到控制台）
+print("模型分析完毕：负相关系数已计算。")
+
